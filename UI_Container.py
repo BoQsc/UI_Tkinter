@@ -14,6 +14,9 @@ def move_container(dx, dy):
     for item in items:
         canvas.move(item, dx, dy)
 
+def resize_container():
+    pass
+
 button = tkinter.Button(window, text="Move", command=lambda: move_container(10, 10))
 button.pack()
 
