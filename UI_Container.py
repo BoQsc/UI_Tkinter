@@ -14,7 +14,7 @@ def move_container(dx, dy):
     for item in items:
         canvas.move(item, dx, dy)
 
-def resize_container():
+def resize_container(): # Container gets smaller From the top. Items get smaller from the top as well.
     pass
 
 button = tkinter.Button(window, text="Move", command=lambda: move_container(10, 10))
