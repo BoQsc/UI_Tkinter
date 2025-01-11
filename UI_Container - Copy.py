@@ -11,7 +11,6 @@ canvas.create_text(125, 100, text="Item2", font=("Arial", 14), tags="container_i
 def move_container(container, dx, dy):
     canvas.move(canvas.find_withtag(container), dx, dy)
     for item in canvas.find_withtag(container + "_item"):
-
         canvas.move(item, dx, dy)
 
 def resize_container(): # Container gets smaller From the top. Items get smaller from the top as well.
