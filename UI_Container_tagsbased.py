@@ -17,8 +17,7 @@ def move_container(container, dx, dy):
 def resize_container(container, y=None, x=None): 
     pass
 
-button = tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10))
-button.pack()
+tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10)).pack()
 
 
 
