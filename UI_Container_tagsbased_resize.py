@@ -26,6 +26,9 @@ def resize_container(container, y=None, x=None):
             ix0, iy0, ix1, iy1 = canvas.coords(item)
             canvas.coords(item, ix0, iy0 + 5, ix1 - 5, iy1)
         elif item_type == "text":
+            font_family, font_size = canvas.itemcget(item, "font").split()
+            print(font_family, font_size)
+            canvas.itemconfig(item, font=(font_family, int(font_size) - 2))
             tx, ty = canvas.coords(item)
             canvas.coords(item, tx - 5, ty + 5)  # Move diagonally
     pass
