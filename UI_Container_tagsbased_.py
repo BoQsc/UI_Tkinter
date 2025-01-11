@@ -22,6 +22,7 @@ def resize_container(container, y=None, x=None):
     canvas.coords(canvas.find_withtag("container"), x0, y0+10, x1, y1)
     for item in canvas.find_withtag("container_item"):
         print("item", canvas.coords(canvas.find_withtag(item)))
+        # Needs Handle text items and handle rectangle items separately.
         #ix0, iy0, ix1, iy1 = canvas.coords(item)
         #print(ix0, iy0, ix1, iy1)
         #canvas.coords(item, ix0, iy0+10, ix1-10, iy1)
