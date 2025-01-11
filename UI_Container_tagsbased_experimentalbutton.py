@@ -17,14 +17,11 @@ def move_container(container, dx, dy):
 def resize_container(container, y=None, x=None): 
     pass
 
-
 canvas.create_rectangle(10, 10, 150, 100, fill="green", outline="red", tags="button_move")
 canvas.create_text(80, 55, text="Click Me!", fill="white", font=("Arial", 12), tags="button_move")
 canvas.tag_bind("button_move", '<Button-1>', lambda args: move_container("container", 10, 10))
 
 button = tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10))
 button.pack()
-
-
 
 window.mainloop()
