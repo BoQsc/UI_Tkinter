@@ -17,13 +17,13 @@ def move_container(container, dx, dy):
 # Container should get smaller From the top to bottom. Items should get smaller from the top-right corner to left bottom.
 # Container resize should trigger collision detection with items. 
 def resize_container(container, y=None, x=None):
-    #canvas.coords(canvas.find_withtag(container), 50, 50, 300, 100+y)
+
+    print(canvas.coords(canvas.find_withtag("container")))
+    x0, y0, x1, y1 = canvas.coords(canvas.find_withtag("container"))
+    canvas.coords(canvas.find_withtag("container"), x0, y0+10, x1, y1)
     pass
 
 tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10)).pack()
-
-print(canvas.coords(canvas.find_withtag("container")))
-
-
+tkinter.Button(window, text="Resize", command=lambda: resize_container("container", 10, 10)).pack()
 
 window.mainloop()
