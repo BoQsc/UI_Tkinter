@@ -25,11 +25,13 @@ def resize_container(container, y=None, x=None):
         if item_type == "rectangle":
             ix0, iy0, ix1, iy1 = canvas.coords(item)
             canvas.coords(item, ix0, iy0 + 5, ix1 - 5, iy1)
+            print(ix0, iy0, ix1, iy1)
         elif item_type == "text":
             font_family, font_size = canvas.itemcget(item, "font").split()
             canvas.itemconfig(item, font=(font_family, int(font_size) - 2))
             tx, ty = canvas.coords(item)
             canvas.coords(item, tx - 5, ty + 5)  # Move diagonally
+            print(font_size)
     pass
 tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10)).pack()
 tkinter.Button(window, text="Resize", command=lambda: resize_container("container", 10, 10)).pack()
