@@ -14,6 +14,7 @@ def move_container(container, dx, dy):
     for item in canvas.find_withtag(container + "_item"):
         canvas.move(item, dx, dy)
 
+# It is getting complicated if introducing collision detection.
 def resize_container(container, y=None, x=None):
     container_id = canvas.find_withtag(container)
     x0, y0, x1, y1 = canvas.coords(container_id)
