@@ -15,20 +15,16 @@ def move_container(container, dx, dy):
         canvas.move(item, dx, dy)
 
 def resize_container(container, y=None, x=None):
-    # Resize the container itself
     container_id = canvas.find_withtag(container)
     x0, y0, x1, y1 = canvas.coords(container_id)
     canvas.coords(container_id, x0, y0 + 10, x1, y1)
 
-    # Resize or reposition items within the container
     for item in canvas.find_withtag(container + "_item"):
         item_type = canvas.type(item)
         if item_type == "rectangle":
-            # Handle rectangles: Shrink towards bottom-left corner
             ix0, iy0, ix1, iy1 = canvas.coords(item)
             canvas.coords(item, ix0, iy0 + 10, ix1 - 10, iy1)
         elif item_type == "text":
-            # Handle text: Adjust position
             tx, ty = canvas.coords(item)
             canvas.coords(item, tx - 5, ty + 5)  # Move diagonally
     pass
