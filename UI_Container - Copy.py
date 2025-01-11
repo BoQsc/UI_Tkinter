@@ -13,7 +13,8 @@ def move_container(container, dx, dy):
     for item in canvas.find_withtag(container + "_item"):
         canvas.move(item, dx, dy)
 
-def resize_container(container, y=None, x=None): # Container should get smaller From the top to bottom. Items should get smaller from the top-right corner to left bottom.
+# Container should get smaller From the top to bottom. Items should get smaller from the top-right corner to left bottom.
+def resize_container(container, y=None, x=None): 
     pass
 
 button = tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10))
