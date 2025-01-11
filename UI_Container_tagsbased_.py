@@ -20,7 +20,7 @@ def resize_container(container, y=None, x=None):
 
     print(canvas.coords(canvas.find_withtag("container")))
     x0, y0, x1, y1 = canvas.coords(canvas.find_withtag("container"))
-    canvas.coords(canvas.find_withtag("container"), x0, y0+10, x1, y1)
+    canvas.coords(canvas.find_withtag("container"), x0, y0+10, x1-10, y1)
     pass
 
 tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10)).pack()

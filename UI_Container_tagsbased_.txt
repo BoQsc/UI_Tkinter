@@ -4,3 +4,6 @@
 
 # Resizes from top downward.
     canvas.coords(canvas.find_withtag("container"), x0, y0+10, x1, y1)
+
+# Resizes from top downward and from right leftward.
+canvas.coords(canvas.find_withtag("container"), x0, y0+10, x1-10, y1)
