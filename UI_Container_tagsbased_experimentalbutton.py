@@ -18,9 +18,9 @@ def resize_container(container, y=None, x=None):
     pass
 
 
-button = canvas.create_rectangle(10, 10, 150, 100, fill="green", outline="red")
-text_id = canvas.create_text(80, 55, text="Click Me!", fill="white", font=("Arial", 12))
-canvas.tag_bind(button, '<Button-1>', lambda args: move_container("container", 10, 10))
+canvas.create_rectangle(10, 10, 150, 100, fill="green", outline="red", tags="button")
+canvas.create_text(80, 55, text="Click Me!", fill="white", font=("Arial", 12), tags="button")
+canvas.tag_bind("button", '<Button-1>', lambda args: move_container("container", 10, 10))
 
 button = tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10))
 button.pack()
