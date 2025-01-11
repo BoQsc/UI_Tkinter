@@ -21,7 +21,6 @@ canvas.create_rectangle(10, 10, 150, 100, fill="green", outline="red", tags="but
 canvas.create_text(80, 55, text="Click Me!", fill="white", font=("Arial", 12), tags="button_move")
 canvas.tag_bind("button_move", '<Button-1>', lambda args: move_container("container", 10, 10))
 
-button = tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10))
-button.pack()
+tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10)).pack()
 
 window.mainloop()
