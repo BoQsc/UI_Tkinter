@@ -1,0 +1,4 @@
+Setting DPI on process probably allows DPI changes the size of window. 
+This is why when you connect to a new Display, checking for window size changes works to further make DPI updates to all inner canvas objects.
+
+https://chatgpt.com/c/678275d9-cc38-800b-b5d8-da9404f9ea6a
