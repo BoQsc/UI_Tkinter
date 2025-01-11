@@ -13,6 +13,7 @@ def move_container(container, dx, dy):
         canvas.move(item, dx, dy)
 
 # Container should get smaller From the top to bottom. Items should get smaller from the top-right corner to left bottom.
+# Container resize should trigger collision detection with items. 
 def resize_container(container, y=None, x=None): 
     pass
 
