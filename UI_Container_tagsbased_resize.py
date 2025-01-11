@@ -1,7 +1,7 @@
 import tkinter
 window = tkinter.Tk()
 
-canvas = tkinter.Canvas(window, bg="black")
+canvas = tkinter.Canvas(window, bg="brown")
 canvas.pack()
 
 canvas.create_rectangle(50, 50, 300, 100, fill="lightgray", tags="container")
@@ -24,7 +24,7 @@ def resize_container(container, y=None, x=None):
         item_type = canvas.type(item)
         if item_type == "rectangle":
             ix0, iy0, ix1, iy1 = canvas.coords(item)
-            canvas.coords(item, ix0, iy0 + 10, ix1 - 10, iy1)
+            canvas.coords(item, ix0, iy0 + 5, ix1 - 5, iy1)
         elif item_type == "text":
             tx, ty = canvas.coords(item)
             canvas.coords(item, tx - 5, ty + 5)  # Move diagonally
