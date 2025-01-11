@@ -1,8 +1,7 @@
 import tkinter
 window = tkinter.Tk()
 
-canvas = tkinter.Canvas(window, bg="black")
-canvas.pack()
+canvas = tkinter.Canvas(window, bg="black").pack()
 
 canvas.create_rectangle(50, 50, 300, 100, fill="lightgray", tags="container")
 canvas.create_rectangle(70, 70, 90, 90,   fill="blue",      tags="container_item")
