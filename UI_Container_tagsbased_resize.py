@@ -14,18 +14,23 @@ def move_container(container, dx, dy):
     for item in canvas.find_withtag(container + "_item"):
         canvas.move(item, dx, dy)
 
-# Container should get smaller From the top to bottom. Items should get smaller from the top-right corner to left bottom.
-# Container resize should trigger collision detection with items. 
 def resize_container(container, y=None, x=None):
-    print(canvas.coords(canvas.find_withtag("container")))
-    x0, y0, x1, y1 = canvas.coords(canvas.find_withtag("container"))
-    canvas.coords(canvas.find_withtag("container"), x0, y0+10, x1, y1)
-    for item in canvas.find_withtag("container_item"):
-        print("item", canvas.coords(canvas.find_withtag(item)))
-        # Needs Handle text items and handle rectangle items separately.
-        #ix0, iy0, ix1, iy1 = canvas.coords(item)
-        #print(ix0, iy0, ix1, iy1)
-        #canvas.coords(item, ix0, iy0+10, ix1-10, iy1)
+    # Resize the container itself
+    container_id = canvas.find_withtag(container)
+    x0, y0, x1, y1 = canvas.coords(container_id)
+    canvas.coords(container_id, x0, y0 + 10, x1, y1)
+
+    # Resize or reposition items within the container
+    for item in canvas.find_withtag(container + "_item"):
+        item_type = canvas.type(item)
+        if item_type == "rectangle":
+            # Handle rectangles: Shrink towards bottom-left corner
+            ix0, iy0, ix1, iy1 = canvas.coords(item)
+            canvas.coords(item, ix0, iy0 + 10, ix1 - 10, iy1)
+        elif item_type == "text":
+            # Handle text: Adjust position
+            tx, ty = canvas.coords(item)
+            canvas.coords(item, tx - 5, ty + 5)  # Move diagonally
     pass
 tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10)).pack()
 tkinter.Button(window, text="Resize", command=lambda: resize_container("container", 10, 10)).pack()
