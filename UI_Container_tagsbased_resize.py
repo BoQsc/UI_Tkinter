@@ -6,7 +6,7 @@ canvas.pack()
 
 canvas.create_rectangle(50, 50, 300, 100, fill="lightgray", tags="container")
 canvas.create_rectangle(70, 70, 90, 90,   fill="blue",      tags="container_item")
-canvas.create_text(100, 70, text="Item2", font=("Arial", 14), tags="container_item")
+canvas.create_text(100, 70, text="Item2", font=("Arial", 10), tags="container_item")
 
 
 def move_container(container, dx, dy):
