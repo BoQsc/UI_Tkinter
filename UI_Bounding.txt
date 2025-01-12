@@ -1,0 +1,1 @@
+Each container object should have boundaries, container always at least same size as the items.
