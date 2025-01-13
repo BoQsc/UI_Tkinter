@@ -15,7 +15,7 @@ def move_container(container, dx, dy):
         canvas.move(item, dx, dy)
 
 # It is getting complicated if introducing collision detection.
-def resize_container(container, y_new=None):
+def resize_container(container, y=None):
     container_id = canvas.find_withtag(container)
     x0, y0, x1, y1 = canvas.coords(container_id)
     canvas.coords(container_id, x0, y0 + 10, x1, y1)
@@ -34,6 +34,6 @@ def resize_container(container, y_new=None):
             print(font_size)
     pass
 tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10)).pack()
-tkinter.Button(window, text="Resize", command=lambda: resize_container("container", 10, 10)).pack()
-tkinter.Button(window, text="Resize", command=lambda: resize_container("container", -10, -10)).pack()
+tkinter.Button(window, text="Resize", command=lambda: resize_container("container", 10)).pack()
+tkinter.Button(window, text="Resize", command=lambda: resize_container("container", -10)).pack()
 window.mainloop()
