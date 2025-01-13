@@ -16,21 +16,26 @@ def move_container(container, dx, dy):
 
 # It is getting complicated if introducing collision detection.
 def resize_container(container, y=None):
+    container_y = y
+    item_cy = y / 2 
+    text_cy = int(y / 5)
+    text_cy_pos = int(y / 2) 
+
     container_id = canvas.find_withtag(container)
     x0, y0, x1, y1 = canvas.coords(container_id)
-    canvas.coords(container_id, x0, y0 + 10, x1, y1)
+    canvas.coords(container_id, x0, y0 + container_y, x1, y1)
 
     for item in canvas.find_withtag(container + "_item"):
         item_type = canvas.type(item)
         if item_type == "rectangle":
             ix0, iy0, ix1, iy1 = canvas.coords(item)
-            canvas.coords(item, ix0, iy0 + 5, ix1 - 5, iy1)
+            canvas.coords(item, ix0, iy0 + item_cy, ix1 - item_cy, iy1)
             print(ix0, iy0, ix1, iy1)
         elif item_type == "text":
             font_family, font_size = canvas.itemcget(item, "font").split()
-            canvas.itemconfig(item, font=(font_family, int(font_size) - 2))
+            canvas.itemconfig(item, font=(font_family, int(font_size) - text_cy))
             tx, ty = canvas.coords(item)
-            canvas.coords(item, tx - 5, ty + 5)  # Move diagonally
+            canvas.coords(item, tx - text_cy_pos, ty + text_cy_pos)  # Move diagonally
             print(font_size)
     pass
 tkinter.Button(window, text="Move", command=lambda: move_container("container", 10, 10)).pack()
