@@ -1,0 +1,1 @@
+By default if you bind to a widget, everything inside it also probably gets binded, at least the canvas it seems to be responding to the <configure> event when applied to window.
