@@ -8,9 +8,8 @@ canvas.create_rectangle(10,20,30,40, fill="red")
 
 def on_window_event(event):
     if event.widget == window:
-        print("test:", event.widget, event.width, event.height)
+        print("test:", event.widget, event.width, event.height, event.x, event.y)
 
 
 window.bind("<Configure>", on_window_event)
-
 window.mainloop()
