@@ -1,0 +1,5 @@
+Take screenshot on a laptop screen.
+Connect laptop to a external display.
+Take screenshot on external display.
+Compare the screenshots by opening in full screen.
+Use your mouse cursor and switch between screenshots to determine the differences. (There should be none)
