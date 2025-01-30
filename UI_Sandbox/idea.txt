@@ -1,0 +1,11 @@
+In tkinter barebones:
+Make taskbar out of blue empty rectangles.
+The rectangles fill the taskbar.
+Introduce type of rectangle that can span rectangles.
+Add green rectangle that can span three rectangles on top of them.
+Make taskbar width match window width.
+Let's number the empty blue rectangles.
+Let's make jsonlike object and add 30+ example names of programs.
+This jsonlike object is for mapping program names on the empty blue rectangles.
+if there is not enough rectangles, two buttons "down" and "up" at the end of blue rectangles should appear, allowing to navigate.
+When navigating: pressing down: it should make appear next row of programs. The same amount of visible blue rectangles.
